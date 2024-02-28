@@ -1,9 +1,0 @@
-LABEL memtest86
-  MENU LABEL Memtest86+
-  KERNEL /memtest/memtest86+
-  
-LABEL ubuntu-2310
-  MENU LABEL ^Install Ubuntu Server 23.10
-  KERNEL /ubuntu-2310/vmlinuz
-  initrd /ubuntu-2310/initrd
-  append url=http://192.168.1.2:6658/ubuntu-23.10-live-server-amd64.iso cloud-config-url=/dev/null ip=dhcp fsck.mode=skip ---

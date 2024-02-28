@@ -1,0 +1,25 @@
+DEFAULT 1
+PROMPT 0
+UI menu.c32
+
+MENU TITLE PXE Boot MENU
+
+LABEL 1
+  localboot 0
+  MENU LABEL Boot to Disk
+  
+LABEL 2
+  MENU LABEL Memtest86+
+  KERNEL /os/memtest/memtest86.bin
+  
+LABEL 3
+  MENU LABEL ^Install Ubuntu Server 23.10
+  KERNEL /os/ubuntu-2310/vmlinuz
+  initrd /os/ubuntu-2310/initrd
+  APPEND url=http://192.168.1.2:6658/ubuntu-23.10-live-server-amd64.iso cloud-config-url=/dev/null ip=dhcp fsck.mode=skip ---
+  
+LABEL 4
+  MENU LABEL ^Install CentOS Stream 9
+  KERNEL /os/centos-stream-9/vmlinuz
+  INITRD /os/centos-stream-9/initrd
+  APPEND ip=dhcp url=http://192.168.1.2:6658/CentOS-Stream-9-latest-x86_64-dvd1.iso
