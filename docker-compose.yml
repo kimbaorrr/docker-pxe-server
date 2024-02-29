@@ -3,8 +3,12 @@ version: '3.1'
 services:
   pxe:
     container_name: pxe
-    build: .
+    image: kimbaorrr/pxe-server:latest
+    # build: .
     restart: always
     cap_add:
       - NET_ADMIN
     network_mode: host
+    volumes:
+        - ./tftpboot:/tftpboot
+        
